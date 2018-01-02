@@ -9,8 +9,8 @@
 FROM		    ehudkaldor/alpine-edge-s6-rpi:latest
 MAINTAINER	Ehud Kaldor <ehud@UnfairFunction.org>
 
-RUN 		    apk add --update \
-        	  --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ \
+RUN 		    echo "http://dl-3.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
+            apk add --update \
         	  mopidy \
         	  py-six \
 #        	  py-mopidy-beets \
