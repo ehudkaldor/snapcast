@@ -9,7 +9,7 @@
 FROM		    ehudkaldor/alpine-edge-s6-rpi:latest
 MAINTAINER	Ehud Kaldor <ehud@UnfairFunction.org>
 
-RUN 		    echo "http://dl-3.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories
+RUN 		    echo "http://dl-3.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
             apk add --update \
         	  mopidy \
         	  py-six \
