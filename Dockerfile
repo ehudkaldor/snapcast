@@ -6,11 +6,10 @@
 #
 ################################################
 
-FROM		    ehudkaldor/alpine-edge-s6:latest
+FROM		    ehudkaldor/alpine-s6:latest
 MAINTAINER	Ehud Kaldor <ehud@UnfairFunction.org>
 
 RUN 		    apk add --update \
-        	  --repository http://dl-3.alpinelinux.org/alpine/edge/testing/ \
         	  mopidy \
         	  py-six \
 #        	  py-mopidy-beets \
