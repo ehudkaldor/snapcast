@@ -2,5 +2,5 @@
 #fdmove -c 2 1
 #s6-envdir env
 
-echo "Starting mopidy server..."
-mopidy
+echo "Starting snapcast server..."
+snapcast --stream pipe:///tmp/snapfifo?name=default
