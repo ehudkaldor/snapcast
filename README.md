@@ -11,9 +11,9 @@ or build it yourself, by cloning this repo and running:
 `docker build -t whatever .`
 
 when running, you can provide a few volumes to be used for specific purposes:
-`docker run
+```docker run
   -d
   --name snapcast
   -p 1704:1704        # server port
   -P 1705:1705        # remote control port
-  ehudkaldor/snapcast:latest`
+  ehudkaldor/snapcast:latest```
