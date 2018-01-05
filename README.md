@@ -11,11 +11,12 @@ or build it yourself, by cloning this repo and running:
 `docker build -t whatever .`
 
 when running, you can provide a few volumes to be used for specific purposes:
-`docker run
+```
+docker run
   -d
   --name mopidy
   -v <a dir for database>:/opt/data              # optional, might be useful if the container restarts  
   -v <a dir for playlists>:/opt/playlists        # optional
   -v <a dir with your local music>:/opt/music    # optional, yes, but not providing it will leave you with no music
   -p 6680:6680
-  ehudkaldor/mopidy:latest`
+  ehudkaldor/mopidy:latest```
