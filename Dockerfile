@@ -6,10 +6,11 @@
 #
 ################################################
 
-FROM		    ehudkaldor/alpine-s6:latest
+FROM		    ehudkaldor/alpine-edge-s6-rpi:latest
 MAINTAINER	Ehud Kaldor <ehud@UnfairFunction.org>
 
-RUN 		    apk add --update \
+RUN 		    echo "http://dl-3.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
+            apk add --update \
         	  mopidy \
         	  py-six \
 #        	  py-mopidy-beets \
@@ -26,7 +27,8 @@ EXPOSE 	  	6680
 RUN 		    pip install Mopidy-MusicBox-Webclient && \
  		        pip install Mopidy-Mobile && \
             pip install mopidy-beets && \
-            pip install mopidy-moped
+            pip install mopidy-moped && \
+            pip install Mopidy-Local-SQLite
 
 # Add the configuration file.
 ADD 		    rootfs /
