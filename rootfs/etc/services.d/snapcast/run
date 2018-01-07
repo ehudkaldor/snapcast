@@ -3,4 +3,4 @@
 #s6-envdir env
 
 echo "Starting snapcast server..."
-snapcast --stream pipe:///tmp/snapfifo?name=default
+snapserver --stream pipe:///tmp/snapfifo?name=default
