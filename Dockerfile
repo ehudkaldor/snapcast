@@ -6,7 +6,7 @@
 #
 ################################################
 
-FROM        ehudkaldor/alpine-edge-s6-rpi:latest
+FROM        ehudkaldor/alpine-s6-rpi:latest
 MAINTAINER  Ehud Kaldor <ehud@UnfairFunction.org>
 
 RUN         apk add --update \
