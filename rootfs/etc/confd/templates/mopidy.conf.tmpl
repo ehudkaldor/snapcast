@@ -13,7 +13,7 @@ scan_flush_threshold = 100
 
 [audio]
 #output = autoaudiosink
-output = audioresample ! audioconvert ! audio/x-raw,rate=48000,channels=2,format=S16LE ! wavenc ! filesink location=/tmp/${HOSTNAME}
+output = audioresample ! audioconvert ! audio/x-raw,rate=48000,channels=2,format=S16LE ! wavenc ! filesink location=/tmp/{{or (getenv "HOSTNAME") "default"}}
 
 [mpd]
 hostname = 0.0.0.0
