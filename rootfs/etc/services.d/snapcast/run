@@ -1,6 +1,9 @@
-#!/usr/bin/with-contenv sh
-#fdmove -c 2 1
-#s6-envdir env
+#!/bin/sh
+streams=""
+for stream in `ls /tmp/streams`; do
+  streams="$streams --stream pipe:///tmp/$stream?name=$stream";
+done
 
 echo "Starting snapcast server..."
-snapserver --stream pipe:///tmp/snapfifo?name=default
+#snapserver --stream pipe:///tmp/snapfifo?name=default
+snapserver $streams
