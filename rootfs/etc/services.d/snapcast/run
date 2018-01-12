@@ -1,9 +1,9 @@
 #!/bin/sh
 streams=""
-for stream in `ls /tmp/streams`; do
+for stream in `ls /tmp/`; do
   streams="$streams --stream pipe:///tmp/$stream?name=$stream";
 done
 
-echo "Starting snapcast server..."
+echo "Starting snapcast server with streams $streams"
 #snapserver --stream pipe:///tmp/snapfifo?name=default
 snapserver $streams
