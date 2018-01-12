@@ -16,5 +16,8 @@ RUN         apk add --update \
 # Server socket.
 EXPOSE      1704 1705
 
+# directory for stream file(s)
+run         mkdir /tmp/streams/
+
 # Add the configuration file.
 ADD         rootfs /
