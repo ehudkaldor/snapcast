@@ -1,6 +1,6 @@
 #!/bin/sh
 streams=""
-for stream in `ls /tmp`; do
+for stream in `ls /tmp/`; do
   streams="$streams --stream pipe:///tmp/$stream?name=$stream";
 done
 
