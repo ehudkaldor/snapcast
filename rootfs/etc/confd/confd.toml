@@ -1,5 +1,5 @@
-backend = "etcd"
+backend = "env"
 log-level = "debug"
-nodes = [
-  "http://etcd:2379",
-]
+# nodes = [
+#   "http://etcd:2379",
+# ]
