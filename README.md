@@ -12,6 +12,8 @@ you can pull it directly from docker hub:
 or build it yourself, by cloning this repo and running:
 `docker build -t whatever .`
 
+This image contains both server and client. The decision between server and client is determined at container start, by setting the `SNAPSERVER_URL` environmental variable in the `run` command. Obviously, it should be set to the address of the container running the server (or any other). This causes confd to write an S6 run script that will run the client and connect to the given server. Check out the confd template under `/rootfs/etc/confd/templates/`
+
 when running, you can provide a few volumes to be used for specific purposes:
 ```docker run
   -d
