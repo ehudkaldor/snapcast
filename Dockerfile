@@ -13,9 +13,9 @@ RUN 		    echo "http://dl-3.alpinelinux.org/alpine/edge/testing" >> /etc/apk/rep
             apk add --update \
         	  mopidy \
         	  py-six \
-        	  gst-plugins-good0.10 \
-            gst-plugins-bad0.10 \
-            gst-plugins-ugly0.10 \
+        	  gst-plugins-good \
+            gst-plugins-bad \
+            gst-plugins-ugly \
         	  alsa-utils \
         	  py-pip && \
 		        rm -rf /var/cache/apk/*
