@@ -2,7 +2,7 @@
 debug_file = /var/log/mopidy/mopidy-debug.log
 
 [local]
-library = sqlite
+library = images
 enabled = true
 data_dir = /opt/data
 media_dir = /opt/music
@@ -10,6 +10,8 @@ playlists_dir = /opt/playlists
 scan_timeout = 2000
 scan_flush_threshold = 100
 
+[local-images]
+library = sqlite
 
 [audio]
 #output = autoaudiosink
@@ -35,3 +37,16 @@ protocols =
     rtsp
 timeout = 5000
 metadata_blacklist =
+
+
+[spotify]
+client_id = 0be02142-5251-4591-bfa1-36835f821436
+client_secret = OhfNk2U_2DW0z1aynYwi0vPMVrx0aOgAqQsdXnDAxy4=
+
+[spotify_web]
+client_id = 0be02142-5251-4591-bfa1-36835f821436
+client_secret = OhfNk2U_2DW0z1aynYwi0vPMVrx0aOgAqQsdXnDAxy4=
+
+[iris]
+country = US
+locale = en_US
