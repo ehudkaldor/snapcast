@@ -28,7 +28,11 @@ RUN 		    pip install Mopidy-MusicBox-Webclient && \
  		        pip install Mopidy-Mobile && \
             pip install mopidy-beets && \
             pip install mopidy-moped && \
-            pip install Mopidy-Local-SQLite
+            pip install Mopidy-Local-SQLite && \
+            pip install mopidy-gmusic && \
+            pip install Mopidy-Local-Images && \
+            pip install Mopidy-Spotify && \
+            pip install Mopidy-Iris
 
 # Add the configuration file.
 ADD 		    rootfs /
