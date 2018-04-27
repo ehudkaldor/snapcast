@@ -24,7 +24,8 @@ RUN 		    echo "http://dl-3.alpinelinux.org/alpine/edge/testing" >> /etc/apk/rep
 EXPOSE 	  	6680
 
 # Install more Mopidy extensions from PyPI.
-RUN 		    pip install Mopidy-MusicBox-Webclient && \
+RUN 		    pip install --upgrade pip && && \
+            pip install Mopidy-MusicBox-Webclient && \
  		        pip install Mopidy-Mobile && \
             pip install mopidy-beets && \
             pip install mopidy-moped && \
