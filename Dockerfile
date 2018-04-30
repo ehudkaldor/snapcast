@@ -17,7 +17,7 @@ RUN         apk add --update \
 EXPOSE      1704 1705
 
 # directory for stream file(s)
-run         mkdir /tmp/streams/
+RUN         mkdir /tmp/streams/
 
 # Add the configuration file.
-ADD         rootfs /
+COPY        rootfs /
