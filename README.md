@@ -14,20 +14,21 @@ or build it yourself, by cloning this repo and running:
 
 This image contains both server and client. The decision between server and client is determined at container start, by setting the `SNAPSERVER_URL` environmental variable in the `run` command. Obviously, it should be set to the address of the container running the server (or any other). This causes confd to write an S6 run script that will run the client and connect to the given server. Check out the confd template under `/rootfs/etc/confd/templates/`
 
-Running the client:
+Running the client. Note the  `--device /dev/snd` which is the sound device on my Linux. it might be different in yours:
 ```
-   docker run
-   -e SNAPSERVER_URL=172.17.0.4
+   docker run \
+   -e SNAPSERVER_URL=172.17.0.4 \
+   --device /dev/snd \
    ehudkaldor/snapcast:latest
 ```
 
-when running as server, you can provide a few volumes to be used for specific purposes:
+when running as server, you can provide a few volumes to be used for specific purposes. Also note that port 1704 is the ports clients connect to, and port 1705 is the control port for SnapCast (change client groups, etc.):
 ```
-  docker run
-  -d
-  --name snapcast
-  -p 1704:1704                                  # server port
-  -p 1705:1705                                  # remote control port
-  -v <a dir with your fifo stream files>:/tmp   # this is where your fifo stream are
+  docker run \
+  -d \
+  --name snapcast \
+  -p 1704:1704 \
+  -p 1705:1705 \
+  -v <a dir with your fifo stream files>:/tmp \
   ehudkaldor/snapcast:latest
   ```
