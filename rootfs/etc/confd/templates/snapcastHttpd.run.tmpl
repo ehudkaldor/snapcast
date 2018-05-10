@@ -1,0 +1,7 @@
+#!/bin/sh
+
+{{ if (exists (getenv "SNAPSERVER_URL")) }}
+python /usr/local/bin/snapcastHttpd.py
+{{ else }}
+
+{{ end }}
