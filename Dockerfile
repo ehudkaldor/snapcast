@@ -13,8 +13,9 @@ MAINTAINER	Ehud Kaldor <ehud@UnfairFunction.org>
 EXPOSE 	  	6680
 
 # RUN 		    echo "http://dl-3.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
-RUN         apk add --update \
-        	  mopidy \
+RUN     apk update && \
+        apk upgrade apk && \
+        apk add mopidy \
             gcc \
             g++ \
         	  gst-plugins-good \
@@ -22,6 +23,7 @@ RUN         apk add --update \
             gst-plugins-ugly \
         	  alsa-utils \
             python \
+            python3 \
             python-dev \
             py-cffi \
             py-six \
@@ -46,4 +48,4 @@ RUN         apk add --update \
             python-dev && \
             rm -rf /var/cache/apk/*
 # Add the configuration file.
-ADD 		    rootfs /
+COPY 		    rootfs /
