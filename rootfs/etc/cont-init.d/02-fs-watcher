@@ -1,0 +1,2 @@
+#!/usr/bin/with-contenv sh
+pip3 install -r /opt/fs-watcher/requirements.txt
