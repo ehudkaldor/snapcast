@@ -30,6 +30,7 @@ RUN     apk update && \
         	  py-pip \
             py-lxml && \
  		    pip install --upgrade pip && \
+            pip install inotify-simple && \
             pip install Mopidy-MusicBox-Webclient && \
  		        pip install Mopidy-Mobile && \
             pip install mopidy-beets && \
