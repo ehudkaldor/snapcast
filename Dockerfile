@@ -10,7 +10,10 @@ FROM        ehudkaldor/alpine-s6:latest
 MAINTAINER  Ehud Kaldor <ehud@UnfairFunction.org>
 
 RUN         apk add --update \
-            git python snapcast && \
+            # git python snapcast && \
+            git python py-pip && \
+            pip install -U pip && \
+            pip install snapcast && \
             git clone https://github.com/ehudkaldor/snapcastHttpd.git && \
             mv snapcastHttpd/snapcastHttpd.py /usr/local/bin && \
             apk del git && \
