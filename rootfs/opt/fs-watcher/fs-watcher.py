@@ -7,12 +7,13 @@ def recursively_watch(inotify, root_folder, flags):
     following links. Returns a dictionary that maps watch descriptors to filepaths."""
     watches = {}
     for folder, _, filenames in os.walk(root_folder):
-        filepaths = [os.path.join(folder, filename) for filename in filenames]
-        for path in [folder] + filepaths:
+        # filepaths = [os.path.join(folder, filename) for filename in filenames]
+        # for path in [folder] + filepaths:
+        for path in [folder]:
             try:
+                print(f"adding watch to dir {path}")
                 wd = inotify.add_watch(path, flags)
                 watches[wd] = path
-                print(f"added watch to dir {wd}")
             except FileNotFoundError:
                 # Broken link or deleted
                 pass
