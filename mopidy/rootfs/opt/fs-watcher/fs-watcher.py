@@ -1,5 +1,6 @@
 from inotify_simple import INotify, flags
 import os
+import sys
 import subprocess
 
 def recursively_watch(inotify, root_folder, flags):
@@ -24,7 +25,7 @@ print("fs-watcher starting...")
 inotify = INotify()
 watch_flags = flags.CREATE | flags.DELETE | flags.MODIFY | flags.DELETE_SELF
 # wd = inotify.add_watch('/opt/music', watch_flags)
-watches = recursively_watch(inotify, '/opt/music', watch_flags)
+watches = recursively_watch(inotify, sys.argv[1], watch_flags)
 while True:
     for event in inotify.read():
         print(event)

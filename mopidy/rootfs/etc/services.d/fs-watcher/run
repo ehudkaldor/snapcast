@@ -3,4 +3,4 @@
 #s6-envdir env
 
 echo "Starting fs-watcher"
-python3 /opt/fs-watcher/fs-watcher.py
+python3 /opt/fs-watcher/fs-watcher.py '/opt/music'
