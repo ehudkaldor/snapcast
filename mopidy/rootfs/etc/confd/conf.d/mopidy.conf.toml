@@ -1,3 +1,0 @@
-[template]
-src = "mopidy.conf.tmpl"
-dest = "/root/.config/mopidy/mopidy.conf"
