@@ -1,0 +1,26 @@
+#!/bin/sh
+{{ $myserver := getenv "SNAPSERVER_URL" }}
+{{ if ne $myserver "" }}
+  snapclient --host {{getenv "SNAPSERVER_URL"}}
+{{ else }}
+  for stream in $(ls /streams/); do
+    if [[ -d /streams/$stream ]]; then
+      file="$(ls /streams/$stream | head -1)"
+      if [[ $file ]]; then
+        path="/streams/$stream/$file"
+        echo "$path"
+      fi
+    else
+      path="/streams/$stream"
+    fi
+    if [[ $path ]]; then
+      streams="$streams --stream pipe://$path?name=$stream";
+      file=
+      path=
+    fi
+  done
+
+  echo "Starting snapcast server with streams $streams"
+  #snapserver --stream pipe:///streams/snapfifo?name=default
+  snapserver $streams
+{{end}}

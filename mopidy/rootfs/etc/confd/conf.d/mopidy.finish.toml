@@ -1,3 +1,0 @@
-[template]
-src = "mopidy.finish.tmpl"
-dest = "/etc/cont-finish.d/mopidy.finish"
